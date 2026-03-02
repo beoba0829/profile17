@@ -1479,22 +1479,35 @@ export default function ModelProfile() {
               onClick={() => window.location.href = `/profile?city=${city}&name=${encodeURIComponent(otherModel.name)}`}
             >
               <div className="profile-more-img">
-                <div style={{
-                  width: '100%',
-                  height: '100%',
-                  background: `linear-gradient(135deg, #${String(15 + index * 3).padStart(2, '0')}${String(15 + index * 2).padStart(2, '0')}${String(10 + index).padStart(2, '0')}, #0d0d0d)`,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center'
-                }}>
-                  <span style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: '3rem',
-                    color: 'rgba(201, 169, 110, 0.12)'
+                {otherModel.gallery && otherModel.gallery.length > 0 ? (
+                  <img
+                    src={otherModel.gallery[0]}
+                    alt={otherModel.name}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      display: 'block'
+                    }}
+                  />
+                ) : (
+                  <div style={{
+                    width: '100%',
+                    height: '100%',
+                    background: `linear-gradient(135deg, #${String(15 + index * 3).padStart(2, '0')}${String(15 + index * 2).padStart(2, '0')}${String(10 + index).padStart(2, '0')}, #0d0d0d)`,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
                   }}>
-                    {String(index + 2).padStart(2, '0')}
-                  </span>
-                </div>
+                    <span style={{
+                      fontFamily: "'Playfair Display', serif",
+                      fontSize: '3rem',
+                      color: 'rgba(201, 169, 110, 0.12)'
+                    }}>
+                      {String(index + 2).padStart(2, '0')}
+                    </span>
+                  </div>
+                )}
                 {otherModel.vip && <div className="profile-more-vip">VIP</div>}
                 <div className="profile-more-gradient"></div>
               </div>
