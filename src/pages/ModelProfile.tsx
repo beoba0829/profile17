@@ -1535,7 +1535,16 @@ export default function ModelProfile() {
         </div>
 
         <div className="profile-more-cta">
-          <button className="profile-btn-view-all" onClick={() => window.location.href = '/'}>
+          <button className="profile-btn-view-all" onClick={() => {
+            const cityMap: Record<string, string> = {
+              'sg': 'saigon',
+              'hn': 'hanoi',
+              'dn': 'danang',
+              'nt': 'nhatrang'
+            };
+            const sectionId = cityMap[city] || 'saigon';
+            window.location.href = `/#${sectionId}`;
+          }}>
             Xem tất cả {model?.city}
           </button>
         </div>
