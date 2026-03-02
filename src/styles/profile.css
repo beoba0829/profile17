@@ -141,14 +141,14 @@ body {
   position: relative;
   overflow: visible;
   background: transparent;
-  flex: 0 0 340px;
-  width: 340px;
+  flex: 0 0 380px;
+  width: 380px;
 }
 
 .profile-gallery-main {
   position: relative;
-  width: 340px;
-  height: 480px;
+  width: 380px;
+  height: 540px;
   overflow: hidden;
   background: #111;
   border: 1px solid var(--border);
@@ -157,19 +157,21 @@ body {
 .profile-gallery-slides {
   display: flex;
   height: 100%;
+  width: 100%;
   transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 .profile-gallery-slide {
-  min-width: 340px;
-  width: 340px;
-  height: 480px;
+  min-width: 380px;
+  width: 380px;
+  height: 540px;
   background: #181818;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   position: relative;
+  flex-shrink: 0;
 }
 
 .profile-gallery-slide img {
