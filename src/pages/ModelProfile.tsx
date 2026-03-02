@@ -988,9 +988,9 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       hours: '7PM – 5AM',
       gallery: [
         'https://pbs.twimg.com/media/HCYQmA_bIAEb2M7?format=jpg&name=4096x4096',
-        'https://pbs.twimg.com/media/HCYQmA8bMAACM-2?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYQmA8bwAEVvlF?format=jpg&name=4096x4096',
         'https://pbs.twimg.com/media/HCYQmA_bIAAwwqq?format=jpg&name=4096x4096',
-        'https://pbs.twimg.com/media/HCYQmA8bwAEVvlF?format=jpg&name=4096x4096'
+        'https://pbs.twimg.com/media/HCYQmA8bMAACM-2?format=jpg&name=4096x4096'
       ]
     },
     'Kim Anh': {
