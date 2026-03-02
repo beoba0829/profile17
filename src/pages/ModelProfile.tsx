@@ -712,10 +712,10 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       measurements: '88 – 63 – 91',
       hours: '8PM – 6AM',
       gallery: [
-        'https://pbs.twimg.com/media/HCYMKKcaIAAF6LI?format=jpg&name=4096x4096',
-        'https://pbs.twimg.com/media/HCK99-YaoAAn-jQ?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baAAEOcgq?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baIAE1QW1?format=jpg&name=large'
+        'https://pbs.twimg.com/media/HCYNh6XaMAAZV-3?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYNh6WaUAAwblb?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYNh6RbgAAQyHI?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYNh6cbMAAqnda?format=jpg&name=4096x4096'
       ]
     },
     'Linh Chi': {
