@@ -613,8 +613,8 @@ const cityModels: Record<string, Record<string, ModelData>> = {
         'https://pbs.twimg.com/media/HCYMSeObwAAl1ji?format=jpg&name=large'
       ]
     },
-    'Hải Yến': {
-      name: 'Hải Yến',
+    'Yến Nhi': {
+      name: 'Yến Nhi',
       age: 21,
       city: 'Đà Nẵng',
       district: 'Thanh Khê, Đà Nẵng',
