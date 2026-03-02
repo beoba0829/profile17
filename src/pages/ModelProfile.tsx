@@ -333,9 +333,9 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       hours: '8PM – 6AM',
       gallery: [
         'https://pbs.twimg.com/media/HCXQ8pKb0AAjRnD?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-YaoAAn-jQ?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baAAEOcgq?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baIAE1QW1?format=jpg&name=large'
+        'https://pbs.twimg.com/media/HCXQ8pHbEAAJAdn?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCXQ8pJbgAApCam?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCXQ8pMakAAxSSG?format=jpg&name=4096x4096'
       ]
     },
     'Thanh Hà': {
