@@ -312,9 +312,9 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       hours: '6PM – 5AM',
       gallery: [
         'https://pbs.twimg.com/media/HCYKfzqawAEXa3Z?format=jpg&name=4096x4096',
-        'https://pbs.twimg.com/media/HCK99-YaoAAn-jQ?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baAAEOcgq?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baIAE1QW1?format=jpg&name=large'
+        'https://pbs.twimg.com/media/HCYKfzybYAAuaZY?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYKfzracAAMCeT?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYKfznbMAA88zm?format=jpg&name=4096x4096'
       ]
     },
     'Ngọc Thảo': {
