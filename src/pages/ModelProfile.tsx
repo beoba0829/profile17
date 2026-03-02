@@ -225,10 +225,10 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       measurements: '85 – 60 – 88',
       hours: '7PM – 5AM',
       gallery: [
-        'https://pbs.twimg.com/media/HCK99-YaoAAn-jQ?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baAAEOcgq?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baIAE1QW1?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-gawAA6HhO?format=jpg&name=large'
+        'https://pbs.twimg.com/media/HCLANcMa4AE36Yt?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCLANcNaAAEeOkJ?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCLANcPaEAAFUu4?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCLANcQbMAECt8L?format=jpg&name=medium'
       ]
     },
     'Minh Thư': {
