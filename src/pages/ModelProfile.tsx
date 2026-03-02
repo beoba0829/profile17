@@ -1008,10 +1008,10 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       measurements: '81 – 56 – 84',
       hours: '8PM – 4AM',
       gallery: [
-        'https://pbs.twimg.com/media/HCYOQXwnaoAAT397?format=jpg&name=4096x4096',
-        'https://pbs.twimg.com/media/HCK99-YaoAAn-jQ?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baAAEOcgq?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK99-baIAE1QW1?format=jpg&name=large'
+        'https://pbs.twimg.com/media/HCYQ27tbsAAwa7o?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYQ27wasAAMTnB?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCZJHj5boAAk-tz?format=jpg&name=4096x4096',
+        'https://pbs.twimg.com/media/HCYQ271asAAV0DM?format=jpg&name=4096x4096'
       ]
     },
     'Thùy Dương': {
