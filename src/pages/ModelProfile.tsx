@@ -246,10 +246,10 @@ const cityModels: Record<string, Record<string, ModelData>> = {
       measurements: '83 – 58 – 86',
       hours: '6PM – 4AM',
       gallery: [
-        'https://pbs.twimg.com/media/HCK-MlwaYAAi1lD?format=jpg&name=large',
-        'https://pbs.twimg.com/media/HCK-MlsagAAnabz?format=jpg&name=medium',
-        'https://pbs.twimg.com/media/HCK-Mlza8AAwHkD?format=jpg&name=medium',
-        'https://pbs.twimg.com/media/HCK-MlpbUAAXWbq?format=jpg&name=medium'
+        'https://pbs.twimg.com/media/HCLCyN8akAAJxD2?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCLCyN4b0AEg3OK?format=jpg&name=large',
+        'https://pbs.twimg.com/media/HCLCyKib0AEaymI?format=jpg&name=medium',
+        'https://pbs.twimg.com/media/HCLCyKdakAISEel?format=jpg&name=large'
       ]
     },
     'Hồng Ngọc': {
