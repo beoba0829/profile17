@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { createClient } from '@supabase/supabase-js';
 import '../styles/profile.css';
+
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
 
 interface ModelData {
   name: string;
@@ -17,6 +23,16 @@ interface ModelData {
   measurements?: string;
   hours?: string;
   gallery?: string[];
+}
+
+interface ModelVideo {
+  id: string;
+  model_name: string;
+  city: string;
+  video_url: string;
+  video_order: number;
+  title?: string;
+  duration?: string;
 }
 
 const cityModels: Record<string, Record<string, ModelData>> = {
@@ -1044,6 +1060,7 @@ export default function ModelProfile() {
   const [currentVideoSlide, setCurrentVideoSlide] = useState(0);
   const [city, setCity] = useState<string | null>(null);
   const [modelName, setModelName] = useState<string | null>(null);
+  const [videos, setVideos] = useState<ModelVideo[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -1060,8 +1077,26 @@ export default function ModelProfile() {
 
     if (cityParam && nameParam && cityModels[cityParam]?.[nameParam]) {
       setModel(cityModels[cityParam][nameParam]);
+
+      fetchVideos(cityParam, nameParam);
     }
   }, []);
+
+  const fetchVideos = async (cityParam: string, nameParam: string) => {
+    const { data, error } = await supabase
+      .from('model_videos')
+      .select('*')
+      .eq('city', cityParam)
+      .eq('model_name', nameParam)
+      .order('video_order', { ascending: true });
+
+    if (error) {
+      console.error('Error fetching videos:', error);
+      setVideos([]);
+    } else {
+      setVideos(data || []);
+    }
+  };
 
   useEffect(() => {
     const videoSlider = document.getElementById('video-slider');
@@ -1215,7 +1250,7 @@ export default function ModelProfile() {
     setCurrentSlide(index);
   };
 
-  const totalVideoSlides = 4;
+  const totalVideoSlides = Math.max(videos.length, 1);
 
   const handlePrevVideoSlide = () => {
     setCurrentVideoSlide((prev) => (prev - 1 + totalVideoSlides) % totalVideoSlides);
@@ -1410,15 +1445,9 @@ export default function ModelProfile() {
             className="profile-video-slider"
             style={{ transform: `translateX(-${currentVideoSlide * 100}%)` }}
           >
-            {[
-              { videoUrl: 'https://res.cloudinary.com/dechikoa8/video/upload/vc_h264/v1772443477/fbec8bc7a198525909d0aa6a0f27c229_q7gm4q.mp4' },
-              { videoUrl: 'https://res.cloudinary.com/dechikoa8/video/upload/vc_h264/v1772443470/b3212c8cfaee5a7dee344d52a625c595_sfmr9s.mp4' },
-              { videoUrl: 'https://res.cloudinary.com/dechikoa8/video/upload/vc_h264/v1772443541/0228_qhria3.mp4'},
-              { videoUrl: 'https://res.cloudinary.com/dechikoa8/video/upload/vc_h264/v1772443504/0228_1_yrq5go.mp4'},
-              {}
-            ].map((video, idx) => (
-              <div key={idx} className="profile-video-slide">
-                {video.videoUrl ? (
+            {videos.length > 0 ? (
+              videos.map((video, idx) => (
+                <div key={video.id} className="profile-video-slide">
                   <div className="profile-video-placeholder-16-9">
                     <video
                       controls
@@ -1429,17 +1458,23 @@ export default function ModelProfile() {
                         display: 'block'
                       }}
                     >
-                      <source src={video.videoUrl} type="video/mp4" />
+                      <source src={video.video_url} type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
+                    {video.duration && (
+                      <div className="profile-video-duration">{video.duration}</div>
+                    )}
                   </div>
-                ) : (
-                  <div className="profile-video-placeholder-16-9">
-                    <div className="profile-video-play">&#9654;</div>
-                  </div>
-                )}
+                </div>
+              ))
+            ) : (
+              <div className="profile-video-slide">
+                <div className="profile-video-placeholder-16-9">
+                  <div className="profile-video-play">&#9654;</div>
+                  <span className="profile-video-label">Chưa có video</span>
+                </div>
               </div>
-            ))}
+            )}
           </div>
 
           <button className="profile-video-btn profile-video-prev" onClick={handlePrevVideoSlide}>
@@ -1449,19 +1484,23 @@ export default function ModelProfile() {
             <ChevronRight size={20} />
           </button>
 
-          <div className="profile-video-dots">
-            {[0, 1, 2, 3, 4].map((index) => (
-              <div
-                key={index}
-                className={`profile-video-dot ${currentVideoSlide === index ? 'active' : ''}`}
-                onClick={() => goToVideoSlide(index)}
-              />
-            ))}
-          </div>
+          {videos.length > 0 && (
+            <>
+              <div className="profile-video-dots">
+                {videos.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`profile-video-dot ${currentVideoSlide === index ? 'active' : ''}`}
+                    onClick={() => goToVideoSlide(index)}
+                  />
+                ))}
+              </div>
 
-          <div className="profile-video-count">
-            {String(currentVideoSlide + 1).padStart(2, '0')} / {String(totalVideoSlides).padStart(2, '0')}
-          </div>
+              <div className="profile-video-count">
+                {String(currentVideoSlide + 1).padStart(2, '0')} / {String(totalVideoSlides).padStart(2, '0')}
+              </div>
+            </>
+          )}
         </div>
       </section>
 
